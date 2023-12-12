@@ -2,14 +2,21 @@ import ForecastCard from "./ForecastCard";
 import sun from "./images/sun.svg"
 
 
-export default function Container() {
+export default function Container(props) {
+  console.log(props.weatherData);
+  let currentTemp = props.weatherData.current.temp;
+  let wind=props.weatherData.current.wind_speed;
+  let humidity=props.weatherData.current.humidity;
+  let visibility=props.weatherData.current.visibility/1000;
+  let uvi=props.weatherData.current.uvi;
+  let city = props.city.toUpperCase();
 
   return (
     <div className="container">
       <div className="container-head">
         <img src={sun}></img>
-        <h1>39.2&deg;</h1>
-        <h3>City,country</h3>
+        <h1>{currentTemp}&deg;</h1>
+        <h3>{city}</h3>
       </div>
       <div className="container-forecast-head">
     
@@ -28,15 +35,15 @@ export default function Container() {
         <table>
           <tr>
             <td>Wind</td>
-            <td>00</td>
+            <td>{wind} m/s</td>
             <td>Humidity</td>
-            <td>00</td>
+            <td>{humidity} g/m&sup3;</td>
           </tr>
           <tr>
             <td>Visibility</td>
-            <td>00</td>
+            <td>{visibility} km</td>
             <td>UV</td>
-            <td>00</td>
+            <td>{uvi}</td>
           </tr>
         </table>
       </div>
