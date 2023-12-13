@@ -14,7 +14,9 @@ function App() {
     /* --------------------------------Latitude & Longitude------------------------------------- */
     ///*
     let LatLonUrl = `http://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=2&${apiId}`;
-    fetch(LatLonUrl)
+    fetch(LatLonUrl,{
+      referrerPolicy: "unsafe_url"
+    })
       .then((res) => {
         if (!res.ok) {
           throw new Error("API call unsuccessful");
