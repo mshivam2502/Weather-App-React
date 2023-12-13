@@ -55,7 +55,7 @@ function App() {
 
   function init(responseFromServer,city) {
     setState(() => {
-      return <Container weatherData={responseFromServer} city={city} />;
+      return <Container weatherData={responseFromServer} city={city} arr={responseFromServer.hourly} state={state}/>;
     });
   }
 
