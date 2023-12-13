@@ -8,12 +8,12 @@ function App() {
   const [state, setState] = React.useState();
 
   function callAPI(city) {
-    /*http://api.openweathermap.org/geo/1.0/direct?q=panvel&limit=2&appid=f6a7d207b47b9da6f9fdd5b3b90fafee */
+    /*https://api.openweathermap.org/geo/1.0/direct?q=panvel&limit=2&appid=f6a7d207b47b9da6f9fdd5b3b90fafee */
     /*https://api.openweathermap.org/data/2.5/onecall?lat=19.0019&lon=73.1241&appid=f6a7d207b47b9da6f9fdd5b3b90fafee&units=metric */
 
     /* --------------------------------Latitude & Longitude------------------------------------- */
     ///*
-    let LatLonUrl = `http://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=2&${apiId}`;
+    let LatLonUrl = `https://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=2&${apiId}`;
     fetch(LatLonUrl,{
       referrerPolicy: "unsafe_url"
     })
