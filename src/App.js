@@ -14,9 +14,7 @@ function App() {
     /* --------------------------------Latitude & Longitude------------------------------------- */
     ///*
     let LatLonUrl = `https://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=2&${apiId}`;
-    fetch(LatLonUrl,{
-      referrerPolicy: "unsafe_url"
-    })
+    fetch(LatLonUrl)
       .then((res) => {
         if (!res.ok) {
           throw new Error("API call unsuccessful");
@@ -29,9 +27,7 @@ function App() {
         /* -----------------------------Weather Data API Call----------------------------------------- */
 
         let WeatherAPI = `https://api.openweathermap.org/data/2.5/onecall?lat=${data[0].lat}&lon=${data[0].lon}&${apiId}&units=metric`;
-        fetch(WeatherAPI,{
-          referrerPolicy: "unsafe_url"
-        })
+        fetch(WeatherAPI)
           .then((res) => {
             if (!res.ok) {
               throw new Error("API call unsuccessful");
