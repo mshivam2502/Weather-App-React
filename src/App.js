@@ -29,7 +29,9 @@ function App() {
         /* -----------------------------Weather Data API Call----------------------------------------- */
 
         let WeatherAPI = `https://api.openweathermap.org/data/2.5/onecall?lat=${data[0].lat}&lon=${data[0].lon}&${apiId}&units=metric`;
-        fetch(WeatherAPI)
+        fetch(WeatherAPI,{
+          referrerPolicy: "unsafe_url"
+        })
           .then((res) => {
             if (!res.ok) {
               throw new Error("API call unsuccessful");
